@@ -46,16 +46,16 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
       #- run: mkdir -p path/to/artifact
 
-      - run: |
-         echo "artifactPath=${{ github.wokspace }}" >> $GITHUB_ENV
+      #- run: |
+      #   echo "artifactPath=${{ github.wokspace }}" >> $GITHUB_ENV
 
-      - name: Upload Docker image Artifact
-        uses: actions/upload-artifact@v3
-        with:
+      #- name: Upload Docker image Artifact
+       # uses: actions/upload-artifact@v3
+        #with:
           #Artifactory name
-          name: myartifact          
-          if-no-files-found: error
+         # name: myartifact          
+         # if-no-files-found: error
           #Duration aft which artifactory will expire
-          retention-days: 5
-          path: ${{ env.artifactPath }}
+         # retention-days: 5
+          #path: ${{ env.artifactPath }}
       
