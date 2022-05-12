@@ -54,7 +54,7 @@ jobs:
         with:
           #Artifactory name
           name: myartifact
-          path: ${{ env.artifactPath }}
+          artifactPath: ${{ env.artifactPath }}
           if-no-files-found: error
           #Duration aft which artifactory will expire
           retention-days: 5
