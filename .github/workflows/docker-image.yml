@@ -46,7 +46,7 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
       - run: mkdir -p path/to/artifact
 
-      - run: echo hello > path/to/artifact/${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+      - run: echo hello > path/to/artifact
 
       - name: Upload Docker image Artifact
         uses: actions/upload-artifact@v3
@@ -54,7 +54,7 @@ jobs:
         #Artifactory name
          name: myartifact
         #a file, dir or wildcard pattern that describes what to upload
-         path: path/to/artifact/${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+         path: ${{ github.wokspace }}
          if-no-files-found: error
         #Duration aft which artifactory will expire
          retention-days: 5
