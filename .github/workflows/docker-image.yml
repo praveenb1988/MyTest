@@ -44,13 +44,17 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      - run: mkdir -p path/to/artifact
+
+      - run: echo hello > path/to/artifact/${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
       - name: Upload Docker image Artifact
         uses: actions/upload-artifact@v3
         with:
         #Artifactory name
          name: myartifact
         #a file, dir or wildcard pattern that describes what to upload
-         path: ghcr.io/praveenb1988/mytest:main
+         path: path/to/artifact/${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
          if-no-files-found: error
         #Duration aft which artifactory will expire
          retention-days: 5
