@@ -50,7 +50,7 @@ jobs:
         #Artifactory name
          name: myartifact
         #a file, dir or wildcard pattern that describes what to upload
-         path: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+         path: ghcr.io/praveenb1988/mytest:main
          if-no-files-found: error
         #Duration aft which artifactory will expire
          retention-days: 5
