@@ -53,9 +53,9 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           #Artifactory name
-          name: myartifact
-          artifactPath: ${{ env.artifactPath }}
+          name: myartifact          
           if-no-files-found: error
           #Duration aft which artifactory will expire
           retention-days: 5
+          path: ${{ env.artifactPath }}
       
